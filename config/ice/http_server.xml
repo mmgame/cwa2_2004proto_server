@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- servlets -->
+	<bean id="uploadServlet" class="com.cwa.proto.servlet.UploadServlet">
+		<property name="prototypeService" ref="protoService"/>
+	</bean>
+
+
+	<bean id="welcomeFiles" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<value>login.jsp</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="contextHandler" class="org.eclipse.jetty.webapp.WebAppContext">
+		<constructor-arg index="0" value="webapps" />
+		<constructor-arg index="1" value="" />
+		<property name="welcomeFiles" ref="welcomeFiles" />
+	</bean>
+	
+	<bean id="servletMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="/ComUpload" value-ref="uploadServlet" />
+			</map>
+		</constructor-arg>
+	</bean>
+</beans>

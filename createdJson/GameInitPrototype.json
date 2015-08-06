@@ -1,0 +1,3 @@
+[{"desc":"金币初始化(类型，数量)","initParamList":[10000001,100000000],"initType":1,"keyId":1}, 
+{"desc":"钻石初始化(类型，数量)","initParamList":[10000002,10000000],"initType":1,"keyId":2}, 
+{"desc":"道具初始化（id，数量）","initParamList":[2999999,100],"initType":2,"keyId":3}]

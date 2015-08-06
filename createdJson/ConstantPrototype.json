@@ -1,0 +1,10 @@
+[{"attributeName":"CONSUMEITEM_COUNT","desc":"使用道具时消耗的数量","keyId":1,"value":"1"}, 
+{"attributeName":"GOLD_MAX","desc":"金币最大值","keyId":2,"value":"2000000000"}, 
+{"attributeName":"DIAMOND_MAX","desc":"钻石最大值","keyId":3,"value":"2000000000"}, 
+{"attributeName":"EQUIPMENT_COUNT_MAX","desc":"装备最大值","keyId":4,"value":"200"}, 
+{"attributeName":"USERNAME_MAX_LENGHT","desc":"名字的最大长度（字节）","keyId":5,"value":"18"}, 
+{"attributeName":"DISCHARGE_ITEM_ID","desc":"一键卸下插件所需道具id","keyId":6,"value":"2010001"}, 
+{"attributeName":"DISCHARGE_DIAMOND_COUNT","desc":"一键卸下插件所需钻石个数","keyId":7,"value":"100"}, 
+{"attributeName":"POWER_COUNT","desc":"体力回复次数","keyId":8,"value":"1"}, 
+{"attributeName":"POWER_MAX","desc":"体力最大上限","keyId":9,"value":"999"}, 
+{"attributeName":"LUCKY_MAX","desc":"幸运值上限","keyId":10,"value":"1000"}]

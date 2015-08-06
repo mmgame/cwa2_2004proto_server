@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 原型数据缓存 -->
+	<bean id="allPrototype" class="com.cwa.proto.cache.AllPrototype">
+	</bean>
+	<!-- 服务类 -->
+	<bean id="protoService" class="com.cwa.proto.PrototypeService">
+		<property name="allPrototype" ref="allPrototype" />
+	</bean>
+
+	<!-- ice service实现类 -->
+	<bean id="protoServiceI" class="com.cwa.proto.service.ProtoServiceI">
+		<property name="protoManager" ref="protoService" />
+	</bean>
+
+	<bean id="eventHandlerMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<!-- <entry key="serverice.proto.ProtoEvent" value-ref="protoEventEventHandler" 
+					/> -->
+			</map>
+		</constructor-arg>
+	</bean>
+	<bean id="eventListenerI" class="com.cwa.component.event.ice.EventListenerI">
+		<property name="eventHandlerMap" ref="eventHandlerMap" />
+	</bean>
+
+	<bean id="serviceImplMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<!-- {serviceName:serviceI} -->
+				<entry key="IProtoService" value-ref="protoServiceI" />
+				<entry key="IEventListener" value-ref="eventListenerI" />
+			</map>
+		</constructor-arg>
+	</bean>
+</beans>
